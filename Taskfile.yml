@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+version: '3'
+
+vars:
+  EMACS_PATH: ~/.config/emacs/
+
+tasks:
+
+  default:
+    desc: Prints this message
+    cmds:
+      - cmd: task --list-all
+
+  sync:
+    dir: "{{.EMACS_PATH}}"
+    cmds:
+      - cmd: bin/doom sync

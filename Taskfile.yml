@@ -12,7 +12,17 @@ tasks:
     cmds:
       - cmd: task --list-all
 
+  install:
+    cmds:
+      - cmd: git clone --depth 1 https://github.com/doomemacs/core {{.EMACS_PATH}}
+      - cmd: "{{.EMACS_PATH}}bin/doom install"
+
   sync:
     dir: "{{.EMACS_PATH}}"
     cmds:
       - cmd: bin/doom sync
+
+  upgrade:
+    dir: "{{.EMACS_PATH}}"
+    cmds:
+      - cmd: bin/doom upgrade

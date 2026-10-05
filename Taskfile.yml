@@ -26,3 +26,6 @@ tasks:
     dir: "{{.EMACS_PATH}}"
     cmds:
       - cmd: bin/doom upgrade
+
+  restart:
+    cmd: systemctl restart emacs.service --user
